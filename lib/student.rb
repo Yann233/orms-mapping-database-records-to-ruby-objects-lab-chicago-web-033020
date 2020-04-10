@@ -6,6 +6,7 @@ class Student
  # @grade = grade
  # end
 
+ #attributes has an id, name, grade
   def self.new_from_db(row)
     # create a new Student object given a row from the database
     new_student = self.new
@@ -115,6 +116,8 @@ class Student
     DB[:conn].execute(sql, self.name, self.grade)
   end
 
+
+#.create_table=> creates a student table
   def self.create_table
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
@@ -127,6 +130,7 @@ class Student
     DB[:conn].execute(sql)
   end
 
+#.drop_table=>drops the student table
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
