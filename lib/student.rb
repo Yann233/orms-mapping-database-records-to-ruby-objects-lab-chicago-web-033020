@@ -106,7 +106,7 @@ class Student
     end
   end
 
-
+##save=>saves an instance of the Student class to the database
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
