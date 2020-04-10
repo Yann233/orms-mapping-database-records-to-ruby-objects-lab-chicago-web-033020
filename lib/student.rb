@@ -95,7 +95,7 @@ class Student
 
  def self.all_students_in_grade_X(num)
     sql = <<-SQL
-      SELECT * 
+      SELECT *
       FROM students
       WHERE grade = ?
       SQL
