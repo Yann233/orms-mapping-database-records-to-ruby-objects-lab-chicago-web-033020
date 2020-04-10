@@ -1,12 +1,11 @@
 class Student
-  attr_accessor :id, :name, :grade
+  attr_accessor :id, :name, :grade   #attributes has an id, name, grade
  # def initialize(name, grade, id=nil)
  # @id = id
  # @name = name
  # @grade = grade
  # end
 
- #attributes has an id, name, grade
  #.new_from_db=>creates an instance with corresponding attribute values
   def self.new_from_db(row)
     # create a new Student object given a row from the database
@@ -21,8 +20,7 @@ class Student
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
       sql = <<-SQL
-        SELECT *
-        FROM students
+        SELECT * FROM students
       SQL
 
       DB[:conn].execute(sql).map do |row|
