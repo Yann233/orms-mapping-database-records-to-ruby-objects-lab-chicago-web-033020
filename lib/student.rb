@@ -20,7 +20,7 @@ class Student
     # remember each row should be a new instance of the Student class
     sql = <<-SQL
           SELECT *
-          FROM students;
+          FROM students
         SQL
 
         DB[:conn].execute(sql)
