@@ -7,6 +7,7 @@ class Student
  # end
 
  #attributes has an id, name, grade
+ #.new_from_db=>creates an instance with corresponding attribute values
   def self.new_from_db(row)
     # create a new Student object given a row from the database
     new_student = self.new
@@ -106,7 +107,7 @@ class Student
     end
   end
 
-##save=>saves an instance of the Student class to the database
+# #save=>saves an instance of the Student class to the database
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
